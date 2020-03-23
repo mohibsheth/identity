@@ -1,0 +1,13 @@
+{
+  "title": "User",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    }
+  },
+  "description": ""
+}

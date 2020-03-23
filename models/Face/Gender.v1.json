@@ -1,0 +1,21 @@
+{
+  "title": "Gender",
+  "type": "object",
+  "description": "The predicted gender of a detected face.\n\nPrecog Identity makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Precog Identity to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.\n\nUsing Precog Identity to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform.\n\nWe don't recommend using gender binary predictions to make decisions that impact an individual's rights, privacy, or access to services.",
+  "properties": {
+    "Type": {
+      "type": "string",
+      "enum": [
+        "MALE",
+        "FEMALE"
+      ]
+    },
+    "Confidence": {
+      "type": "number",
+      "description": "Level of confidence in the determination.",
+      "format": "float",
+      "minimum": 0,
+      "maximum": 100
+    }
+  }
+}

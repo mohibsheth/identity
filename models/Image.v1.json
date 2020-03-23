@@ -1,0 +1,19 @@
+{
+  "title": "Image",
+  "type": "object",
+  "x-examples": {},
+  "properties": {
+    "Bytes": {
+      "type": "array",
+      "description": "The input image as base64-encoded bytes",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Url": {
+      "type": "string",
+      "description": "The input image as publicly accessible url"
+    }
+  },
+  "description": "Provides the input image either as bytes or a publicly accessible url.\n\nYou pass image bytes to a Precog Identity API operation by using the Bytes property. For example, you would use the Bytes property to pass an image loaded from a local file system. Image bytes passed by using the Bytes property must be base64-encoded.\n\nYou pass image url to a Precog Identity API operation by using the Url property. The Url must be publicly accessible over the internet without requiring any authentication or the authentication should be built in the Url itself."
+}

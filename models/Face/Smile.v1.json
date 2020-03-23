@@ -1,0 +1,18 @@
+{
+  "title": "Smile",
+  "type": "object",
+  "description": "Indicates whether or not the face is smiling, and the confidence level in the determination.",
+  "properties": {
+    "Value": {
+      "type": "boolean",
+      "description": "Boolean value that indicates whether the face has smile or not."
+    },
+    "Confidence": {
+      "type": "number",
+      "description": "Level of confidence in the determination.",
+      "format": "float",
+      "minimum": 0,
+      "maximum": 100
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "BoundingBox",
+  "type": "object",
+  "description": "Identifies the bounding box around the label, face, or text. The left (x-coordinate) and top (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).",
+  "properties": {
+    "Top": {
+      "type": "number",
+      "description": "Top coordinate of the bounding box.",
+      "format": "float"
+    },
+    "Left": {
+      "type": "number",
+      "description": "Left coordinate of the bounding box.",
+      "format": "float"
+    },
+    "Width": {
+      "type": "number",
+      "format": "float",
+      "description": "Width of the bounding box."
+    },
+    "Height": {
+      "type": "number",
+      "format": "float",
+      "description": "Height of the bounding box."
+    }
+  }
+}

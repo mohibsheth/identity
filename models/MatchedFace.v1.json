@@ -1,0 +1,20 @@
+{
+  "title": "MatchedFace",
+  "type": "object",
+  "description": "Provides metadata for a matched face.",
+  "properties": {
+    "Face": {
+      "$ref": "./Face/Face.v1.json"
+    },
+    "User": {
+      "$ref": "./User.v1.json"
+    },
+    "Confidence": {
+      "type": "number",
+      "format": "float",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Confidence in the match of this face with the input face."
+    }
+  }
+}

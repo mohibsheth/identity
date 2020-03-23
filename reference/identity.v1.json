@@ -1,0 +1,318 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "identity",
+    "version": "1.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "https://api.precogos.ai/identity"
+    }
+  ],
+  "paths": {
+    "/DetectFaces": {
+      "post": {
+        "summary": "DetectFaces",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Faces": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "../models/Face/Face.v1.json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-detectfaces",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "$ref": "../models/image.v1.json"
+                  }
+                }
+              },
+              "examples": {
+                "example-1": {}
+              }
+            }
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/CompareFaces": {
+      "post": {
+        "summary": "CompareFaces",
+        "operationId": "post-comparefaces",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "SourceFace": {
+                      "$ref": "../models/Face/Face.v1.json"
+                    },
+                    "MatchedFaces": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "../models/MatchedFace.v1.json"
+                      }
+                    },
+                    "UnmatchedFaces": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "../models/Face/Face.v1.json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "SourceImage": {
+                    "$ref": "../models/Image.v1.json"
+                  },
+                  "TargetImage": {
+                    "$ref": "../models/Image.v1.json"
+                  },
+                  "Threshold": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/CreateProject": {
+      "post": {
+        "summary": "CreateProject",
+        "operationId": "post-CreateProject",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Project": {
+                      "$ref": "../models/Project.v1.json"
+                    },
+                    "AuthCode": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../models/Project.v1.json"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RegisterFace": {
+      "post": {
+        "summary": "RegisterFace",
+        "operationId": "post-RegisterFace",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Face": {
+                      "$ref": "../models/Face/Face.v1.json"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Image": {
+                    "$ref": "../models/Image.v1.json"
+                  },
+                  "Project": {
+                    "$ref": "../models/Project.v1.json"
+                  },
+                  "User": {
+                    "$ref": "../models/User.v1.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SearchFaces": {
+      "post": {
+        "summary": "SearchFaces",
+        "operationId": "post-SearchFaces",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Faces": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "../models/MatchedFace.v1.json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Project": {
+                    "$ref": "../models/Project.v1.json"
+                  },
+                  "Image": {
+                    "$ref": "../models/Image.v1.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/DeleteFace": {
+      "post": {
+        "summary": "DeleteFace",
+        "operationId": "post-DeleteFace",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Project": {
+                    "$ref": "../models/Project.v1.json"
+                  },
+                  "User": {
+                    "$ref": "../models/User.v1.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ListFaces": {
+      "post": {
+        "summary": "ListFaces",
+        "operationId": "post-ListFaces",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/DeleteProject": {
+      "post": {
+        "summary": "DeleteProject",
+        "operationId": "post-DeleteProject",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Project": {
+                    "$ref": "../models/Project.v1.json"
+                  },
+                  "AuthCode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {}
+  }
+}

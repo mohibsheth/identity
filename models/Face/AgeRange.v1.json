@@ -1,0 +1,25 @@
+{
+  "title": "AgeRange",
+  "type": "object",
+  "description": "Structure containing the estimated age range, in years, for a face.\n\nPrecog Identity estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.",
+  "properties": {
+    "Low": {
+      "type": "number",
+      "description": "The highest estimated age.",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "High": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "The lowest estimated age."
+    },
+    "Confidence": {
+      "type": "number",
+      "description": "Level of confidence in the determination.",
+      "minimum": 0,
+      "maximum": 100
+    }
+  }
+}

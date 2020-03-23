@@ -1,0 +1,28 @@
+{
+  "title": "Pose",
+  "type": "object",
+  "description": "Indicates the pose of the face as determined by its pitch, roll, and yaw.",
+  "properties": {
+    "Pitch": {
+      "type": "number",
+      "description": "Value representing the face rotation on the pitch axis.",
+      "format": "float",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "Roll": {
+      "type": "number",
+      "description": "Value representing the face rotation on the roll axis.",
+      "format": "float",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "Yaw": {
+      "type": "number",
+      "description": "Value representing the face rotation on the yaw axis.",
+      "format": "float",
+      "minimum": -180,
+      "maximum": 180
+    }
+  }
+}

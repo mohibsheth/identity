@@ -1,0 +1,21 @@
+{
+  "title": "Landmark",
+  "type": "object",
+  "description": "Indicates the location of the landmark on the face.",
+  "properties": {
+    "Type": {
+      "type": "string",
+      "description": "Type of landmark."
+    },
+    "X": {
+      "type": "number",
+      "description": "The x-coordinate from the top left of the landmark.",
+      "format": "float"
+    },
+    "Y": {
+      "type": "number",
+      "description": "The y-coordinate from the top left of the landmark.",
+      "format": "float"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Eyeglasses",
+  "type": "object",
+  "description": "Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.",
+  "x-examples": {},
+  "properties": {
+    "Value": {
+      "type": "boolean",
+      "description": "Boolean value that indicates whether the face has eyeglasses or not."
+    },
+    "Confidence": {
+      "type": "number",
+      "description": "Level of confidence in the determination.",
+      "format": "float",
+      "minimum": 0,
+      "maximum": 100
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Face",
+  "type": "object",
+  "x-examples": {},
+  "description": "Structure containing attributes of the face that the algorithm detected.\n\nA FaceDetail object contains either the default facial attributes or all facial attributes. The default attributes are BoundingBox, Confidence, Landmarks, Pose, and Quality.",
+  "properties": {
+    "AgeRange": {
+      "$ref": "./AgeRange.v1.json"
+    },
+    "BoundingBox": {
+      "$ref": "./BoundingBox.v1.json"
+    },
+    "Emotions": {
+      "type": "array",
+      "description": "The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.",
+      "items": {
+        "$ref": "./Emotion.v1.json"
+      }
+    },
+    "Gender": {
+      "$ref": "./Gender.v1.json"
+    },
+    "Pose": {
+      "$ref": "./Pose.v1.json"
+    },
+    "Landmarks": {
+      "type": "array",
+      "description": "Indicates the location of landmarks on the face.",
+      "items": {
+        "$ref": ""
+      }
+    },
+    "Confidence": {
+      "type": "number",
+      "description": "Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "Beard": {
+      "$ref": "./Beard.v1.json"
+    },
+    "Eyeglasses": {
+      "$ref": "./Eyeglasses.v1.json"
+    },
+    "EyesOpen": {
+      "$ref": "./EyesOpen.v1.json"
+    },
+    "MouthOpen": {
+      "$ref": "./MouthOpen.v1.json"
+    },
+    "Mustache": {
+      "$ref": "./Mustache.v1.json"
+    },
+    "Smile": {
+      "$ref": "./Smile.v1.json"
+    }
+  }
+}
